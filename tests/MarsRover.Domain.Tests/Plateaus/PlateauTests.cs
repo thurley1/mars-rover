@@ -1,9 +1,9 @@
 ﻿using FluentAssertions;
-using MarsRover.Domain.Coordinates.Models;
-using MarsRover.Domain.Plateaus.Models;
+using MarsRover.Domain.Coordinates;
+using MarsRover.Domain.Plateaus;
 using Xunit;
 
-namespace MarsRover.Domain.Tests.Plateaus.Models
+namespace MarsRover.Domain.Tests.Plateaus
 {
     public class PlateauTests
     {

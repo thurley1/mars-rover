@@ -1,14 +1,15 @@
 ﻿using FluentAssertions;
+using MarsRover.Domain.Rovers;
 using Xunit;
 
-namespace MarsRover.ConsoleApp.Tests
+namespace MarsRover.Domain.Tests.Rovers
 {
-    public class ConsoleInputExtensionsTests
+    public class RoverInstructionValidationExtensionsTests
     {
         [Fact]
         public void ValidateGridCoordinates_WithNullInput_Throws()
         {
-            string? input = null;
+            string input = "";
             var exception = Record.Exception(() => input.ValidateGridCoordinates());
 
             exception.Should().BeOfType<ArgumentException>();
