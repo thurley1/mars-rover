@@ -2,11 +2,11 @@
 {
     public static class DirectionExtensions
     {
-        public static Direction FromString(this string direction)
+        public static Direction DirectionFromString(this string direction)
         {
-            _ = Enum.TryParse(direction, out Direction d);
-
-            return d;
+            if (Enum.TryParse(direction, out Direction d))
+                return d;
+            else throw new ArgumentOutOfRangeException(nameof(direction));
         }
     }
 }

@@ -91,7 +91,7 @@ static RoverDisposition CaptureRoverStartingPosition(int roverNumber, Plateau pl
     
     return new RoverDisposition(
         coordinates: new Coordinate(int.Parse(dispositionData[0]), int.Parse(dispositionData[1])), 
-        direction: dispositionData[2].FromString());
+        direction: dispositionData[2].DirectionFromString());
 }
 
 static string CaptureMovementPlan(int roverNumber)

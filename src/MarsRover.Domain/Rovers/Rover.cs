@@ -23,23 +23,23 @@ namespace MarsRover.Domain.Rovers
             }
         }
 
-        public void ProcessInstruction(char instruction, Plateau plateau)
+        private void ProcessInstruction(char instruction, Plateau plateau)
         {
             switch(instruction)
             {
                 case 'M':
-                    Forward(plateau);
+                    MoveForward(plateau);
                     break;
                 case 'L':
-                    Left();
+                    TurnLeft();
                     break;
                 case 'R':
-                    Right();
+                    TurnRight();
                     break;
             }
         }
 
-        public void Forward(Plateau plateau)
+        private void MoveForward(Plateau plateau)
         {
             const string MOVE_OUT_OF_BOUNDS_MESSAGE = "Move will cause rover to be outside the bounds of the plateau";
 
@@ -68,12 +68,12 @@ namespace MarsRover.Domain.Rovers
             }
         }
 
-        public void Right()
+        private void TurnRight()
         {
             Disposition.Direction = Disposition.Direction == Direction.W ? Direction.N : Disposition.Direction + 1;
         }
 
-        public void Left()
+        private void TurnLeft()
         {
             Disposition.Direction = Disposition.Direction == Direction.N ? Direction.W : Disposition.Direction - 1;
         }   

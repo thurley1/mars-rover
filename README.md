@@ -1,5 +1,5 @@
 
-## The ASSIGNMENT
+## THE ASSIGNMENT
 
 ### OBJECTIVE
 The purpose of this take-home assignment is to enable you to demonstrate your proficiency in solving problems using software engineering tools and processes. Read the specification below and produce a solution. Your solution should be in the form of a completed and working Console application.
@@ -62,3 +62,9 @@ Rover 2 Starting Position: 3 3 E
 Rover 2 Movement Plan: MMRMMRMRRM
 Rover 2 Output: 5 1 E
 ```
+
+## NOTES FROM THE DEVELOPER
+
+### ASSUMPTIONS
+
+### Liberties Taken
