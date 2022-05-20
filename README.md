@@ -65,6 +65,12 @@ Rover 2 Output: 5 1 E
 
 ## NOTES FROM THE DEVELOPER
 
+### GENERAL NOTES
+
+- I have added more comments to this than I normally do, to try and explain some of my thought process.
+- I took the liberty of modifying the output of the commands, some to make it a bit easier to follow. I added a couple more output lines and added colors to exceptions as well as standard output.
+
 ### ASSUMPTIONS
 
-### Liberties Taken
+- The number of rovers that could be simulated was not specified, so I provided the ability to process an infinite ammount.
+- There was no specification in regards to exception handling when a set of instructions would be moved off of the plateau (grid). I added guards to prevent this from happening.

@@ -3,8 +3,16 @@ using System.Text.RegularExpressions;
 
 namespace MarsRover.Domain.Rovers
 {
+    /// <summary>
+    /// A static class of extension methods used to validate instructions.
+    /// </summary>
     public static class RoverInstructionValidationExtensions
     {
+        /// <summary>
+        /// Validates that the provided string is in the int space int format, otherwise throws an ArgumentException
+        /// </summary>
+        /// <param name="input"></param>
+        /// <exception cref="ArgumentException"></exception>
         public static void ValidateGridCoordinates(this string input)
         {
             if (string.IsNullOrEmpty(input))
@@ -15,6 +23,13 @@ namespace MarsRover.Domain.Rovers
                 throw new ArgumentException("Invalid coordinates entered");
         }
 
+        /// <summary>
+        /// Validates that the provided string is in int space int space [N,E,W,S] format, otherwise throws an ArgumentException
+        /// Also, verification is done on the given coordinates to ensure that the Rover coordinates do not fall outside of the Plateau (grid)
+        /// </summary>
+        /// <param name="input"></param>
+        /// <param name="plateau"></param>
+        /// <exception cref="ArgumentException"></exception>
         public static void ValidateRoverPosition(this string input, Plateau plateau)
         {
             if (string.IsNullOrEmpty(input))
@@ -30,6 +45,11 @@ namespace MarsRover.Domain.Rovers
                 throw new ArgumentException("Position of rover is outside the bounds of the plateau");
         }
 
+        /// <summary>
+        /// Validates that the provided string is in the correct format for a movement plan (only R,L,M are allowed)
+        /// </summary>
+        /// <param name="input"></param>
+        /// <exception cref="ArgumentException"></exception>
         public static void ValidateMovementPlan(this string? input)
         {
             if (input == null)

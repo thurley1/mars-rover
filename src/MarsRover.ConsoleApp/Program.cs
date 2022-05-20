@@ -21,7 +21,7 @@ do {
         disposition: disposition);
     WriteSuccessfulMessage($"Initial state: { rover }");
 
-    //capture movement plan
+    //capture movement plan (loop until valid movement plan is executed)
     var movementPlan = "";
     do
     {
@@ -43,9 +43,12 @@ do {
 
 } while (anotherRover == "Y");
 
-//Leave window open
+//Leave console open
 Console.ReadLine();
 
+/// <summary>
+/// Method that will loop until valid Platau (grid) upper right coordinates are entered.
+/// </summary>
 static Coordinate CaptureGridCoordinates()
 {
     var coordinates = new List<int>();
@@ -71,6 +74,9 @@ static Coordinate CaptureGridCoordinates()
     return new Coordinate(coordinates[0], coordinates[1]);
 }
 
+/// <summary>
+/// Method that will loop until valid Rover initial disposition is entered.
+/// </summary>
 static RoverDisposition CaptureRoverStartingPosition(int roverNumber, Plateau plateau)
 {
     var dispositionData = new List<string>();
@@ -94,6 +100,9 @@ static RoverDisposition CaptureRoverStartingPosition(int roverNumber, Plateau pl
         direction: dispositionData[2].DirectionFromString());
 }
 
+/// <summary>
+/// Method that will loop until a valid movement plan is entered.
+/// </summary>
 static string CaptureMovementPlan(int roverNumber)
 {
     var movementPlan = "";
@@ -116,6 +125,9 @@ static string CaptureMovementPlan(int roverNumber)
     return movementPlan;
 }
 
+/// <summary>
+/// Method that will output a given exception to the console in red
+/// </summary>
 static void WriteException(Exception ex)
 {
     Console.ForegroundColor = ConsoleColor.Red;
@@ -123,6 +135,9 @@ static void WriteException(Exception ex)
     Console.ResetColor();
 }
 
+/// <summary>
+/// Method that will output a given string to the console in green
+/// </summary>
 static void WriteSuccessfulMessage(string? message)
 {
     Console.ForegroundColor = ConsoleColor.Green;

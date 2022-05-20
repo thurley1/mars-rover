@@ -2,6 +2,11 @@
 {
     public class Coordinate
     {
+        /// <summary>
+        /// Creates a new Coordinate with a specific x and y value.
+        /// </summary>
+        /// <param name="x"></param>
+        /// <param name="y"></param>
         public Coordinate(int x, int y)
         {
             X = x;

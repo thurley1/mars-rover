@@ -4,6 +4,10 @@ namespace MarsRover.Domain.Plateaus
 {
     public class Plateau
     {
+        /// <summary>
+        /// Creates a new Plateau (grid) for Rovers to traverse
+        /// </summary>
+        /// <param name="upperRightCoordinate"></param>
         public Plateau(Coordinate upperRightCoordinate)
         {
             UpperRightCoordinate = upperRightCoordinate;
@@ -24,6 +28,9 @@ namespace MarsRover.Domain.Plateaus
                 || yCoord < MinYCoordinate || yCoord > MaxYCoordinate;
         }
 
+        /// <summary>
+        /// Overloaded ToString - helpful in console output
+        /// </summary>
         public override string? ToString()
         {
             return $"Plateau (grid) " +

@@ -1,11 +1,15 @@
-﻿using MarsRover.Domain.Coordinates;
-using MarsRover.Domain.Directions;
+﻿using MarsRover.Domain.Directions;
 using MarsRover.Domain.Plateaus;
 
 namespace MarsRover.Domain.Rovers
 {
     public class Rover
     {
+        /// <summary>
+        /// Creates a new Rover
+        /// </summary>
+        /// <param name="id"></param>
+        /// <param name="disposition"></param>
         public Rover(int id, RoverDisposition disposition)
         {
             Id = id;
@@ -76,8 +80,11 @@ namespace MarsRover.Domain.Rovers
         private void TurnLeft()
         {
             Disposition.Direction = Disposition.Direction == Direction.N ? Direction.W : Disposition.Direction - 1;
-        }   
+        }
 
+        /// <summary>
+        /// Overloaded ToString - helpful in console output
+        /// </summary>
         public override string? ToString()
         {
             return $"Rover { Id } - position: ({ Disposition.Coordinates.X }, { Disposition.Coordinates.Y }), " +
